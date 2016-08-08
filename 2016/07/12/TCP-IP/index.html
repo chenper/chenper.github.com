@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="计算机网络," />
 
 
 
@@ -84,22 +84,46 @@
 
 
 
-<meta name="description" content="把一组数据结构和处理它们的方法组成对象（object），把相同行为的对象归纳为类（class），通过类的封装（encapsulation）隐藏内部细节，通过继承（inheritance）实现类的特化（specialization）／泛化（generalization），通过多态（polymorphism）实现基于对象类型的动态分派（dynamic dispatch）。
+<meta name="description" content="计算机网络知识整理
 
-面向对象的三个基本特征是">
+《Tcp-IP》一书知识整理,要点总结
+
+概述 
+进程
+存储管理
+文件管理
+输入输出设备
+死锁
+初识Linux概述分层：应用层，传输层，网络层，链路层互联网地址：IP地址+端口域名系统：DNS封装与分用：用户数据-&amp;gt;报文段-&amp;gt;数据报-&amp;gt;帧链路层功能：封装IP数据报，实现ARP协议，实现RARP协议环回接口：当目的地址是127.0.0.1或者localhost">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Chenper's Home">
-<meta property="og:url" content="http://chenper.github.com/2016/07/02/oop/index.html">
+<meta property="og:title" content="Tcp-IP知识整理">
+<meta property="og:url" content="http://chenper.github.com/2016/07/12/TCP-IP/index.html">
 <meta property="og:site_name" content="Chenper's Home">
-<meta property="og:description" content="把一组数据结构和处理它们的方法组成对象（object），把相同行为的对象归纳为类（class），通过类的封装（encapsulation）隐藏内部细节，通过继承（inheritance）实现类的特化（specialization）／泛化（generalization），通过多态（polymorphism）实现基于对象类型的动态分派（dynamic dispatch）。
+<meta property="og:description" content="计算机网络知识整理
 
-面向对象的三个基本特征是">
-<meta property="og:updated_time" content="2016-07-02T11:02:07.752Z">
+《Tcp-IP》一书知识整理,要点总结
+
+概述 
+进程
+存储管理
+文件管理
+输入输出设备
+死锁
+初识Linux概述分层：应用层，传输层，网络层，链路层互联网地址：IP地址+端口域名系统：DNS封装与分用：用户数据-&amp;gt;报文段-&amp;gt;数据报-&amp;gt;帧链路层功能：封装IP数据报，实现ARP协议，实现RARP协议环回接口：当目的地址是127.0.0.1或者localhost">
+<meta property="og:updated_time" content="2016-07-12T10:49:01.519Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chenper's Home">
-<meta name="twitter:description" content="把一组数据结构和处理它们的方法组成对象（object），把相同行为的对象归纳为类（class），通过类的封装（encapsulation）隐藏内部细节，通过继承（inheritance）实现类的特化（specialization）／泛化（generalization），通过多态（polymorphism）实现基于对象类型的动态分派（dynamic dispatch）。
+<meta name="twitter:title" content="Tcp-IP知识整理">
+<meta name="twitter:description" content="计算机网络知识整理
 
-面向对象的三个基本特征是">
+《Tcp-IP》一书知识整理,要点总结
+
+概述 
+进程
+存储管理
+文件管理
+输入输出设备
+死锁
+初识Linux概述分层：应用层，传输层，网络层，链路层互联网地址：IP地址+端口域名系统：DNS封装与分用：用户数据-&amp;gt;报文段-&amp;gt;数据报-&amp;gt;帧链路层功能：封装IP数据报，实现ARP协议，实现RARP协议环回接口：当目的地址是127.0.0.1或者localhost">
 
 
 
@@ -120,9 +144,9 @@
 
 
 
-  <link rel="canonical" href="http://chenper.github.com/2016/07/02/oop/"/>
+  <link rel="canonical" href="http://chenper.github.com/2016/07/12/TCP-IP/"/>
 
-  <title>  | Chenper's Home </title>
+  <title> Tcp-IP知识整理 | Chenper's Home </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -242,7 +266,7 @@
             
             
               
-                
+                Tcp-IP知识整理
               
             
           </h1>
@@ -254,19 +278,38 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-02T19:04:31+08:00" content="2016-07-02">
-              2016-07-02
+            <time itemprop="dateCreated" datetime="2016-07-12T10:08:43+08:00" content="2016-07-12">
+              2016-07-12
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/计算机网络/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机网络</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/02/oop/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/02/oop/" itemprop="commentsCount"></span>
+                <a href="/2016/07/12/TCP-IP/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/12/TCP-IP/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -289,15 +332,26 @@
       
 
       
-        <blockquote>
-<p>把一组数据结构和处理它们的方法组成对象（object），把相同行为的对象归纳为类（class），通过类的封装（encapsulation）隐藏内部细节，通过继承（inheritance）实现类的特化（specialization）／泛化（generalization），通过多态（polymorphism）实现基于对象类型的动态分派（dynamic dispatch）。</p>
+        <p></p><h1>计算机网络知识整理</h1><p></p>
+<blockquote>
+<p>《Tcp-IP》一书知识整理,要点总结</p>
+<ul>
+<li><a href="#1">概述</a> </li>
+<li><a href="#2">进程</a></li>
+<li><a href="#3">存储管理</a></li>
+<li><a href="#4">文件管理</a></li>
+<li><a href="#5">输入输出设备</a></li>
+<li><a href="#6">死锁</a></li>
+<li><a href="#7">初识Linux</a><br><h2 id="1">概述</h2><br>分层：应用层，传输层，网络层，链路层<br>互联网地址：IP地址+端口<br>域名系统：DNS<br>封装与分用：用户数据-&gt;报文段-&gt;数据报-&gt;帧<br><h2 id="2">链路层</h2><br>功能：封装IP数据报，实现ARP协议，实现RARP协议<br>环回接口：当目的地址是127.0.0.1或者localhost的时候，一般省略链路层的功能，把IP输入放到输入队列中，再直接发送到本机。<br>最大传输单元（MTU）：链路层帧的最大长度限制。<br>路径MTU：整个传输路径上的最小MTU。<h3>1.ARP地址解析协议</h3>
+
+
+
+
+
+</li>
+</ul>
 </blockquote>
-<p>面向对象的三个基本特征是：封装、继承、多态</p>
-<p>封装，也就是把客观事物封装成抽象的类，并且类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行信息隐藏</p>
-<p>继承是指这样一种能力：它可以使用现有类的所有功能，并在无需重新编写原来的类的情况下对这些功能进行扩展</p>
-<p>多态性（polymorphisn）简单的说，就是一句话：允许将子类类型的指针赋值给父类类型的指针。基于对象所属类的不同，外部对同一个方法的调用，实际执行的逻辑不同</p>
-<p>实现多态，有二种方式，覆盖，重载。<br>覆盖，是指子类重新定义父类的虚函数的做法。<br>重载，是指允许存在多个同名函数，而这些函数的参数表不同（或许参数个数不同，或许参数类型不同，或许两者都不同）。</p>
-<p>封装可以隐藏实现细节，使得代码模块化；继承可以扩展已存在的代码模块（类）；它们的目的都是为了——代码重用。而多态则是为了实现另一个目的——接口重用！多态的作用，就是为了类在继承和派生的时候，保证使用“家谱”中任一类的实例的某一属性时的正确调用</p>
+<h2 id="4">网络层</h2><br><h3>1.IP网际协议</h3><br>IP协议是不可靠，无连接的。不能保证到达目的地，发生错误则丢弃，且每个数据包都是相互独立的，也不保证按顺序接受。<br>当传输数据过大的时候，可以对IP数据报进行分片。<br>TTL：数据报可经过的最大路由数<br><h3>2.路由选择</h3><br>IP路由是逐跳的进行的，IP报文不知道到目的地的传统路径，只会逐步的搜索路由表，其中，路由表包括：目的IP地址，下一跳IP地址，网络接口等等内容。<br><h3>3.子网掩码</h3><br>1的个数为网络长度，0为主机长度，与IP地址相与可以得到子网地址，网络地址包括网络号和子网号。<br><br><br><br><br><br><br><br><h2 id="6">死锁</h2><br>如果一个进程集合中所有进程都在等待其他进程才能引发的事件，则称<br>该进程集合是死锁的。<br><h3>1.死锁条件</h3><br>    1. 互斥条件<br>    2. 不可抢占条件<br>    3. 占有与等待条件<br>    4. 环路等待条件<br><h3>2.鸵鸟算法</h3><br>假装没看到<br><h3> 3.死锁检测与死锁恢复</h3><br>允许死锁的发生，采取措施进行恢复，恢复方法有：利用抢占恢复；利用回滚恢复；利用杀死进程恢复。<br><h3>4.死锁避免</h3><br>    银行家算法：操作系统按照银行家制定的规则为进程分配资源，当进程<br>    首次申请资源时，要测试该进程对资源的最大需求量，如果系统现存的<br>    资源可以满足它的最大需求量则按当前的申请量分配资源，否则就推迟<br>    分配。当进程在执行中继续申请资源时，先测试该进程本次申请的资源<br>    数是否超过了该资源所剩余的总量。若超过则拒绝分配资源，若能满足<br>    则按当前的申请量分配资源，否则也要推迟分配。<br><h3> 5.死锁预防</h3><br>    破坏互斥条件<br>    破坏占有和等待条件<br>    破坏不可抢占条件<br>    破坏环路等待条件<br><h2 id="7">Linux</h2> 
 
       
     </div>
@@ -317,21 +371,27 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/计算机网络/" rel="tag">#计算机网络</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/02/ssl/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2016/07/09/java_se/" rel="next" title="javaSE基础知识">
+                <i class="fa fa-chevron-left"></i> javaSE基础知识
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/07/06/操作系统/" rel="prev" title="操作系统知识整理">
-                操作系统知识整理 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/05/Java虚拟机/" rel="prev" title="《深入理解Java虚拟机》读书笔记">
+                《深入理解Java虚拟机》读书笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -358,8 +418,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/02/oop/"
-           data-title="" data-url="http://chenper.github.com/2016/07/02/oop/">
+      <div class="ds-thread" data-thread-key="2016/07/12/TCP-IP/"
+           data-title="Tcp-IP知识整理" data-url="http://chenper.github.com/2016/07/12/TCP-IP/">
       </div>
     
   </div>
@@ -450,7 +510,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">计算机网络知识整理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2"><span class="nav-number">1.2.</span> <span class="nav-text">链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.ARP地址解析协议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4"><span class="nav-number">1.3.</span> <span class="nav-text">网络层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.IP网际协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.2.</span> <span class="nav-text">2.路由选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.子网掩码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6"><span class="nav-number">1.4.</span> <span class="nav-text">死锁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.1.</span> <span class="nav-text">1.死锁条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.2.</span> <span class="nav-text">2.鸵鸟算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.3.</span> <span class="nav-text"> 3.死锁检测与死锁恢复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.4.</span> <span class="nav-text">4.死锁避免</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.5.</span> <span class="nav-text"> 5.死锁预防</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7"><span class="nav-number">1.5.</span> <span class="nav-text">Linux</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
