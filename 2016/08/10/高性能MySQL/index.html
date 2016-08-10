@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Other," />
+  <meta name="keywords" content="数据库," />
 
 
 
@@ -84,22 +84,67 @@
 
 
 
-<meta name="description" content="Implicit -客户端与服务器全程通过ssl连接（包括最开始的认证）.
-Explicit - 在普通（明文）的认证后， 客户端通过命令切换到ssl，之后客户端到服务器的连接变为加密的。
-资料来自于网络。">
+<meta name="description" content="MySQL基础 
+
+
+1.MySQL基础逻辑架构客户端解析优化缓存等跨存储引擎功能存储引擎并发控制
+读写锁
+读锁：共享锁
+写锁：排它锁
+
+
+锁粒度
+表锁
+行锁：并发能力更好，但锁的开销越大事务原子性的数据操作ACID：原子性，一致性，隔离性，持久性隔离级别
+
+
+未提交读：脏读
+提交读：只能看见已经提交修改，在事务过程中可能被修改
+可重复读:MySQL默认，事物中多次读取一致
+可串行化：加锁，强调">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IMLICIT Vs EXPLICIT">
-<meta property="og:url" content="http://chenper.github.com/2016/07/02/ssl/index.html">
+<meta property="og:title" content="高性能MySQL">
+<meta property="og:url" content="http://chenper.github.com/2016/08/10/高性能MySQL/index.html">
 <meta property="og:site_name" content="Chenper's Home">
-<meta property="og:description" content="Implicit -客户端与服务器全程通过ssl连接（包括最开始的认证）.
-Explicit - 在普通（明文）的认证后， 客户端通过命令切换到ssl，之后客户端到服务器的连接变为加密的。
-资料来自于网络。">
-<meta property="og:updated_time" content="2016-08-10T08:39:25.336Z">
+<meta property="og:description" content="MySQL基础 
+
+
+1.MySQL基础逻辑架构客户端解析优化缓存等跨存储引擎功能存储引擎并发控制
+读写锁
+读锁：共享锁
+写锁：排它锁
+
+
+锁粒度
+表锁
+行锁：并发能力更好，但锁的开销越大事务原子性的数据操作ACID：原子性，一致性，隔离性，持久性隔离级别
+
+
+未提交读：脏读
+提交读：只能看见已经提交修改，在事务过程中可能被修改
+可重复读:MySQL默认，事物中多次读取一致
+可串行化：加锁，强调">
+<meta property="og:updated_time" content="2016-08-10T08:36:47.414Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IMLICIT Vs EXPLICIT">
-<meta name="twitter:description" content="Implicit -客户端与服务器全程通过ssl连接（包括最开始的认证）.
-Explicit - 在普通（明文）的认证后， 客户端通过命令切换到ssl，之后客户端到服务器的连接变为加密的。
-资料来自于网络。">
+<meta name="twitter:title" content="高性能MySQL">
+<meta name="twitter:description" content="MySQL基础 
+
+
+1.MySQL基础逻辑架构客户端解析优化缓存等跨存储引擎功能存储引擎并发控制
+读写锁
+读锁：共享锁
+写锁：排它锁
+
+
+锁粒度
+表锁
+行锁：并发能力更好，但锁的开销越大事务原子性的数据操作ACID：原子性，一致性，隔离性，持久性隔离级别
+
+
+未提交读：脏读
+提交读：只能看见已经提交修改，在事务过程中可能被修改
+可重复读:MySQL默认，事物中多次读取一致
+可串行化：加锁，强调">
 
 
 
@@ -120,9 +165,9 @@ Explicit - 在普通（明文）的认证后， 客户端通过命令切换到ss
 
 
 
-  <link rel="canonical" href="http://chenper.github.com/2016/07/02/ssl/"/>
+  <link rel="canonical" href="http://chenper.github.com/2016/08/10/高性能MySQL/"/>
 
-  <title> IMLICIT Vs EXPLICIT | Chenper's Home </title>
+  <title> 高性能MySQL | Chenper's Home </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -242,7 +287,7 @@ Explicit - 在普通（明文）的认证后， 客户端通过命令切换到ss
             
             
               
-                IMLICIT Vs EXPLICIT
+                高性能MySQL
               
             
           </h1>
@@ -254,8 +299,8 @@ Explicit - 在普通（明文）的认证后， 客户端通过命令切换到ss
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-02T19:04:29+08:00" content="2016-07-02">
-              2016-07-02
+            <time itemprop="dateCreated" datetime="2016-08-10T00:00:00+08:00" content="2016-08-10">
+              2016-08-10
             </time>
           </span>
 
@@ -268,8 +313,8 @@ Explicit - 在普通（明文）的认证后， 客户端通过命令切换到ss
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Other/" itemprop="url" rel="index">
-                    <span itemprop="name">Other</span>
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
                   </a>
                 </span>
 
@@ -284,8 +329,8 @@ Explicit - 在普通（明文）的认证后， 客户端通过命令切换到ss
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/02/ssl/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/02/ssl/" itemprop="commentsCount"></span>
+                <a href="/2016/08/10/高性能MySQL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/10/高性能MySQL/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -308,9 +353,36 @@ Explicit - 在普通（明文）的认证后， 客户端通过命令切换到ss
       
 
       
-        <p>Implicit -客户端与服务器全程通过ssl连接（包括最开始的认证）.</p>
-<p>Explicit - 在普通（明文）的认证后， 客户端通过命令切换到ssl，之后客户端到服务器的连接变为加密的。</p>
-<p>资料来自于网络。</p>
+        <ul>
+<li><a href="#1">MySQL基础</a> </li>
+<li><a href="#2"></a></li>
+<li><a href="#3"></a></li>
+<li><a href="#4"></a><br><h2 id="1">1.MySQL基础</h2><br><strong>逻辑架构</strong><br>客户端<br>解析优化缓存等跨存储引擎功能<br>存储引擎<br><strong>并发控制</strong><ul>
+<li>读写锁<ul>
+<li>读锁：共享锁</li>
+<li>写锁：排它锁</li>
+</ul>
+</li>
+<li>锁粒度<ul>
+<li>表锁</li>
+<li>行锁：并发能力更好，但锁的开销越大<br><strong>事务</strong><br>原子性的数据操作<br>ACID：原子性，一致性，隔离性，持久性<br><strong>隔离级别</strong></li>
+</ul>
+</li>
+<li>未提交读：脏读</li>
+<li>提交读：只能看见已经提交修改，在事务过程中可能被修改</li>
+<li>可重复读:MySQL默认，事物中多次读取一致</li>
+<li>可串行化：加锁，强调事务串行执行<br><strong>InnoDB与myISAM</strong></li>
+<li>InnoDB：默认引擎，隔离级别可重复读，存储在表文件中，支持事务，用来处理大量短期事务，支持外键，行级锁</li>
+<li>myISAM：不支持事务与外键，表级锁，无法安全恢复，多用于多读多插入或较小的表，分开存储在数据文件和索引文件中。</li>
+<li>修改表的存储引擎<ul>
+<li>ALERT TABLE ENGINE =</li>
+<li>导出到文件，修改后再导入</li>
+<li>创建新表，修改引擎再导入数据</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -332,7 +404,7 @@ Explicit - 在普通（明文）的认证后， 客户端通过命令切换到ss
       
         <div class="post-tags">
           
-            <a href="/tags/Other/" rel="tag">#Other</a>
+            <a href="/tags/数据库/" rel="tag">#数据库</a>
           
         </div>
       
@@ -341,17 +413,13 @@ Explicit - 在普通（明文）的认证后， 客户端通过命令切换到ss
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/23/SQL/" rel="next" title="SQL基础">
-                <i class="fa fa-chevron-left"></i> SQL基础
+              <a href="/2016/08/05/Java虚拟机/" rel="next" title="《深入理解Java虚拟机》读书笔记">
+                <i class="fa fa-chevron-left"></i> 《深入理解Java虚拟机》读书笔记
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/02/oop/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -377,8 +445,8 @@ Explicit - 在普通（明文）的认证后， 客户端通过命令切换到ss
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/02/ssl/"
-           data-title="IMLICIT Vs EXPLICIT" data-url="http://chenper.github.com/2016/07/02/ssl/">
+      <div class="ds-thread" data-thread-key="2016/08/10/高性能MySQL/"
+           data-title="高性能MySQL" data-url="http://chenper.github.com/2016/08/10/高性能MySQL/">
       </div>
     
   </div>
@@ -469,7 +537,7 @@ Explicit - 在普通（明文）的认证后， 客户端通过命令切换到ss
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1"><span class="nav-number">1.</span> <span class="nav-text">1.MySQL基础</span></a></li></ol></div>
             
           </div>
         </section>

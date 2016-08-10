@@ -84,8 +84,7 @@
 
 
 
-<meta name="description" content="JavaSE基础知识
-数据类型
+<meta name="description" content="1.数据类型
 
 数值型
 整数
@@ -107,13 +106,12 @@ char：2
 
 
 布尔型
-boolean：true or false数值默认由小到大转型，由大到小要强制转换。运算符赋值运算：=三目运算：布尔表达式 ? 条件满足 : 条不满足数学运算符：+、-、*、/、%关系运算符：&amp;gt;">
+boolean：true or false数值默认由小到大转型，由大到小要强制转换。2.运算符赋值运算：=三目运算：布尔表达式 ? 条件满足 : 条不满足数学运算符：+、-、*、/、%关系运算符：&amp;gt;、&amp;gt;=、">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javaSE基础知识">
 <meta property="og:url" content="http://chenper.github.com/2016/07/09/java_se/index.html">
 <meta property="og:site_name" content="Chenper's Home">
-<meta property="og:description" content="JavaSE基础知识
-数据类型
+<meta property="og:description" content="1.数据类型
 
 数值型
 整数
@@ -135,12 +133,11 @@ char：2
 
 
 布尔型
-boolean：true or false数值默认由小到大转型，由大到小要强制转换。运算符赋值运算：=三目运算：布尔表达式 ? 条件满足 : 条不满足数学运算符：+、-、*、/、%关系运算符：&amp;gt;">
-<meta property="og:updated_time" content="2016-07-09T06:48:48.748Z">
+boolean：true or false数值默认由小到大转型，由大到小要强制转换。2.运算符赋值运算：=三目运算：布尔表达式 ? 条件满足 : 条不满足数学运算符：+、-、*、/、%关系运算符：&amp;gt;、&amp;gt;=、">
+<meta property="og:updated_time" content="2016-08-10T08:37:26.269Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javaSE基础知识">
-<meta name="twitter:description" content="JavaSE基础知识
-数据类型
+<meta name="twitter:description" content="1.数据类型
 
 数值型
 整数
@@ -162,7 +159,7 @@ char：2
 
 
 布尔型
-boolean：true or false数值默认由小到大转型，由大到小要强制转换。运算符赋值运算：=三目运算：布尔表达式 ? 条件满足 : 条不满足数学运算符：+、-、*、/、%关系运算符：&amp;gt;">
+boolean：true or false数值默认由小到大转型，由大到小要强制转换。2.运算符赋值运算：=三目运算：布尔表达式 ? 条件满足 : 条不满足数学运算符：+、-、*、/、%关系运算符：&amp;gt;、&amp;gt;=、">
 
 
 
@@ -371,8 +368,7 @@ boolean：true or false数值默认由小到大转型，由大到小要强制转
       
 
       
-        <p></p><h1>JavaSE基础知识</h1><p></p>
-<p></p><h2>数据类型</h2><p></p>
+        <p></p><h2>1.数据类型</h2><p></p>
 <ul>
 <li>数值型<ul>
 <li>整数<ul>
@@ -394,19 +390,15 @@ boolean：true or false数值默认由小到大转型，由大到小要强制转
 </ul>
 </li>
 <li>布尔型<ul>
-<li>boolean：true or false<br>数值默认由小到大转型，由大到小要强制转换。<br><h2>运算符</h2><br>赋值运算：=<br>三目运算：布尔表达式 ? 条件满足 : 条不满足<br>数学运算符：+、-、*、/、%<br>关系运算符：&gt;、&gt;=、&lt;、&lt;=、==、!=<br>位运算：&gt;&gt;、&lt;&lt;、&gt;&gt;&gt;、^、~<br>逻辑运算：&amp;&amp;、&amp;、||、|、!<br>简便运算符：++、–<br><h2>程序控制</h2><br>if else,switch,while,do while,for等用法<br><h2>方法</h2><br>把某种需要重复调用的功能代码提取出来。<br>public static 返回值类型 方法名称(参数类型 参数名称,…..){<br>  [return 返回值] ;<br>}<br>方法重载：方法名称相同，参数的类型或个数不同<br><h2>数组</h2><br>数组是一组相关变量的集合，可由以下方式申明<br>数据类型 数组名称[] = new 数据类型[长度]<br>数据类型 [] 数组名称 = new 数据类型[长度]<br>初始化(默认初始化，静态初始化，动态初始化)<br>二维数组<br><h2>面向对象</h2><blockquote>
-<p>OOP特性见其他博文<br>构造方法：在一个类中定义的方法名称与类名称相同，且无返回值声明的方法，称为构造方法。若没有明确定义，则自动生成。主要作用就是为一个类中的属性初始化的<br>static 关键字在类中可以声明属性或方法。声明的属性将称为全局属性，声明的方法将成为类方法。<br>在方法中申明内部类<br>class Outer {<br>  private String info = “hello” ;<br>  public void fun(){</p>
-<pre><code>class Inner { // 方法中声明内部类
-    public void print(){
-    System.out.println(info) ;
-    }
-};
-</code></pre><p>  new Inner().print() ;<br>  }<br>};<br></p><h2>String类</h2><br>String是不可变对象<br>“==”用在了对象上则表示的是判断两个对象的地址是否相等，String对象的比较可以用equals方法<br>String对象要采用直接赋值的方式完成，用构造方法会产生两个对象。<br>由于String类一旦创建就不能改变，则“+”运算会产生额外的对象，可以参考StringBuild<br>另外还要熟悉常用的字符串操作方法<p></p>
+<li>boolean：true or false<br>数值默认由小到大转型，由大到小要强制转换。<br><h2>2.运算符</h2><br>赋值运算：=<br>三目运算：布尔表达式 ? 条件满足 : 条不满足<br>数学运算符：+、-、*、/、%<br>关系运算符：&gt;、&gt;=、&lt;、&lt;=、==、!=<br>位运算：&gt;&gt;、&lt;&lt;、&gt;&gt;&gt;、^、~<br>逻辑运算：&amp;&amp;、&amp;、||、|、!<br>简便运算符：++、–<br><h2>3.程序控制</h2><br>if else,switch,while,do while,for等用法<br><h2>4.方法</h2><br>把某种需要重复调用的功能代码提取出来。<br>public static 返回值类型 方法名称(参数类型 参数名称,…..){<br>  [return 返回值] ;<br>}<br>方法重载：方法名称相同，参数的类型或个数不同<br><h2>5.数组</h2><br>数组是一组相关变量的集合，可由以下方式申明<br>数据类型 数组名称[] = new 数据类型[长度]<br>数据类型 [] 数组名称 = new 数据类型[长度]<br>初始化(默认初始化，静态初始化，动态初始化)<br>二维数组<br><h2>6.面向对象</h2><blockquote>
+<p>OOP特性见其他博文</p>
 </blockquote>
 </li>
 </ul>
 </li>
 </ul>
+<p>构造方法：在一个类中定义的方法名称与类名称相同，且无返回值声明的方法，称为构造方法。若没有明确定义，则自动生成。主要作用就是为一个类中的属性初始化的<br>static 关键字在类中可以声明属性或方法。声明的属性将称为全局属性，声明的方法将成为类方法。<br>在方法中申明内部类<br>    class Outer {<br>        private String info = “hello” ;<br>        public void fun(){<br>            class Inner { // 方法中声明内部类<br>                public void print(){<br>                System.out.println(info) ;<br>                }<br>            };<br>        new Inner().print() ;<br>        }<br>    };</p>
+<p></p><h2>7.String类</h2><br>String是不可变对象<br>“==”用在了对象上则表示的是判断两个对象的地址是否相等，String对象的比较可以用equals方法<br>String对象要采用直接赋值的方式完成，用构造方法会产生两个对象。<br>由于String类一旦创建就不能改变，则“+”运算会产生额外的对象，可以参考StringBuild<br>另外还要熟悉常用的字符串操作方法<p></p>
 
       
     </div>
@@ -519,7 +511,7 @@ boolean：true or false数值默认由小到大转型，由大到小要强制转
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -527,7 +519,7 @@ boolean：true or false数值默认由小到大转型，由大到小要强制转
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -536,7 +528,7 @@ boolean：true or false数值默认由小到大转型，由大到小要强制转
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -565,7 +557,7 @@ boolean：true or false数值默认由小到大转型，由大到小要强制转
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">JavaSE基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text">程序控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.5.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.6.</span> <span class="nav-text">面向对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.7.</span> <span class="nav-text">String类</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">1.数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">2.运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">3.程序控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">4.方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">5.数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">6.面向对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">7.String类</span></a></li></ol></div>
             
           </div>
         </section>
