@@ -87,7 +87,7 @@
 <meta name="description" content="MySQL基础 
 数据类型优化
 高性能索引
-1.MySQL基础逻辑架构客户端解析优化缓存等跨存储引擎功能存储引擎并发控制
+查询性能优化1.MySQL基础逻辑架构客户端解析优化缓存等跨存储引擎功能存储引擎并发控制
 读写锁
 读锁：共享锁
 写锁：排它锁
@@ -100,7 +100,7 @@
 
 未提交读：脏读
 提交读：只能看见已经提交修改，在事务过程中可能被修改
-可重复读:MySQL默认，事物中多次读取一致">
+可重复读:MySQL默认，事物中">
 <meta property="og:type" content="article">
 <meta property="og:title" content="高性能MySQL">
 <meta property="og:url" content="http://chenper.github.com/2016/08/10/高性能MySQL/index.html">
@@ -108,7 +108,7 @@
 <meta property="og:description" content="MySQL基础 
 数据类型优化
 高性能索引
-1.MySQL基础逻辑架构客户端解析优化缓存等跨存储引擎功能存储引擎并发控制
+查询性能优化1.MySQL基础逻辑架构客户端解析优化缓存等跨存储引擎功能存储引擎并发控制
 读写锁
 读锁：共享锁
 写锁：排它锁
@@ -121,14 +121,14 @@
 
 未提交读：脏读
 提交读：只能看见已经提交修改，在事务过程中可能被修改
-可重复读:MySQL默认，事物中多次读取一致">
-<meta property="og:updated_time" content="2016-08-14T01:57:38.231Z">
+可重复读:MySQL默认，事物中">
+<meta property="og:updated_time" content="2016-08-16T02:09:50.584Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="高性能MySQL">
 <meta name="twitter:description" content="MySQL基础 
 数据类型优化
 高性能索引
-1.MySQL基础逻辑架构客户端解析优化缓存等跨存储引擎功能存储引擎并发控制
+查询性能优化1.MySQL基础逻辑架构客户端解析优化缓存等跨存储引擎功能存储引擎并发控制
 读写锁
 读锁：共享锁
 写锁：排它锁
@@ -141,7 +141,7 @@
 
 未提交读：脏读
 提交读：只能看见已经提交修改，在事务过程中可能被修改
-可重复读:MySQL默认，事物中多次读取一致">
+可重复读:MySQL默认，事物中">
 
 
 
@@ -354,7 +354,7 @@
 <li><a href="#1">MySQL基础</a> </li>
 <li><a href="#2">数据类型优化</a></li>
 <li><a href="#3">高性能索引</a></li>
-<li><a href="#4"></a><br><h2 id="1">1.MySQL基础</h2><br><strong>逻辑架构</strong><br>客户端<br>解析优化缓存等跨存储引擎功能<br>存储引擎<br><strong>并发控制</strong><ul>
+<li><a href="#4">查询性能优化</a><br><h2 id="1">1.MySQL基础</h2><br><strong>逻辑架构</strong><br>客户端<br>解析优化缓存等跨存储引擎功能<br>存储引擎<br><strong>并发控制</strong><ul>
 <li>读写锁<ul>
 <li>读锁：共享锁</li>
 <li>写锁：排它锁</li>
@@ -399,7 +399,30 @@
 </ul>
 </li>
 <li>当MySQL不能使用索引进行排序时，就会利用自己的排序算法(快速排序算法)在内存(sort buffer)中对数据进行排序，</li>
-<li>索引对于InnoDB非常重要，因为它可以让查询锁更少的元组。减小开销，增加并发数。</li>
+<li>索引对于InnoDB非常重要，因为它可以让查询锁更少的元组。减小开销，增加并发数。<br><h2 id="4">4.查询性能优化</h2><h3>优化数据访问</h3></li>
+<li>确认应用程序是否在检索大量超过需要的数据。这通常意味着访问了太多的行，但有时候也可能是访问了太多的列。<ul>
+<li>查询不需要的记录加上limit</li>
+<li>多表关联时返回全部列</li>
+<li>总是取出所有的数据</li>
+<li>重复查询相同的数据，使用缓存</li>
+</ul>
+</li>
+<li>确认MySQL服务器层是否在分析大量超过需要的数据行<ul>
+<li>响应时间</li>
+<li>访问的行数与返回的行数</li>
+<li>扫描的行数与访问类型<h3>重构查询方式</h3></li>
+</ul>
+</li>
+<li>选择复杂查询还是简单查询</li>
+<li>切分查询</li>
+<li>分解关联查询<h3>查询执行基础</h3></li>
+<li>客户端服务端通信协议</li>
+<li>查询缓存</li>
+<li>查询优化处理<ul>
+<li>语法解析，预处理，查询优化,排序优化</li>
+</ul>
+</li>
+<li>返回结果给客户端<br><strong>排序优化</strong><br>两次传输排序：读取行指针和需要排序的字段，对其进行排序，然后再根据排序结果读取所需要的数据行。显然是两次传输，特别是读取排序后的数据时（第二次）大量随机I/O，所以两次传输成本高。<br>单次排序传输：先读取查询所需所有列，再根据给定列进行排序，最后直接返回排序结果。<br><h3>查询优化的局限性</h3><br><h3>查询优化的提示</h3><br><h3>优化特定类型的查询<h3></h3></h3></li>
 </ul>
 </li>
 </ul>
@@ -557,7 +580,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1"><span class="nav-number">1.</span> <span class="nav-text">1.MySQL基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2"><span class="nav-number">2.</span> <span class="nav-text">2.数据类型优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3"><span class="nav-number">3.</span> <span class="nav-text">3.高性能索引</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.1.</span> <span class="nav-text">概论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.2.</span> <span class="nav-text">索引类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.3.</span> <span class="nav-text">高性能索引策略</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1"><span class="nav-number">1.</span> <span class="nav-text">1.MySQL基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2"><span class="nav-number">2.</span> <span class="nav-text">2.数据类型优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3"><span class="nav-number">3.</span> <span class="nav-text">3.高性能索引</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.1.</span> <span class="nav-text">概论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.2.</span> <span class="nav-text">索引类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.3.</span> <span class="nav-text">高性能索引策略</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4"><span class="nav-number">4.</span> <span class="nav-text">4.查询性能优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.1.</span> <span class="nav-text">优化数据访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.2.</span> <span class="nav-text">重构查询方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.3.</span> <span class="nav-text">查询执行基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.4.</span> <span class="nav-text">查询优化的局限性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.5.</span> <span class="nav-text">查询优化的提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.6.</span> <span class="nav-text">优化特定类型的查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.7.</span> <span class="nav-text"></span></a></li></ol></li></ol></div>
             
           </div>
         </section>
